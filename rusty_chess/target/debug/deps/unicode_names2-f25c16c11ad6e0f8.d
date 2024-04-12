@@ -1,0 +1,11 @@
+/home/iblis/src/chess_engine/rusty_chess/target/debug/deps/libunicode_names2-f25c16c11ad6e0f8.rmeta: /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/lib.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated_phf.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/jamo.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/iter_str.rs
+
+/home/iblis/src/chess_engine/rusty_chess/target/debug/deps/libunicode_names2-f25c16c11ad6e0f8.rlib: /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/lib.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated_phf.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/jamo.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/iter_str.rs
+
+/home/iblis/src/chess_engine/rusty_chess/target/debug/deps/unicode_names2-f25c16c11ad6e0f8.d: /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/lib.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated_phf.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/jamo.rs /home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/iter_str.rs
+
+/home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/lib.rs:
+/home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated.rs:
+/home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/generated_phf.rs:
+/home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/jamo.rs:
+/home/iblis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode_names2-0.6.0/src/iter_str.rs:
