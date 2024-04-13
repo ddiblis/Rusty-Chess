@@ -1,3 +1,5 @@
+use std::io;
+
 // Define an enum to represent the color of pieces
 #[derive(Debug, Clone, Copy)]
 enum Color {
@@ -48,8 +50,59 @@ fn main() {
     // Initialize the board
     initialize_board(&mut board);
 
-    // Print the labeled chessboard
-    print_board(&board);
+    // Variable to keep track of whose turn it is
+    let mut is_blacks_turn = false;
+
+    // Game loop
+    loop {
+        // Print the labeled chessboard
+        print_board(&board);
+
+        // Prompt the player to enter their move
+        println!("Enter your move (e.g., 'E2 to E4'):");
+
+        // Read the input
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Failed to read line");
+
+        // Parse the input
+        let (from, to) = parse_input(&input);
+
+        // Check if it's the player's turn
+        if is_blacks_turn {
+            // Check if there's a piece at the selected position
+            if let Piece::Empty = board[from.0][from.1] {
+                println!("No piece at the specified position.");
+            } else {
+                // Check if it's the player's piece
+                if is_players_piece(board[from.0][from.1], Color::White) {
+                    // Perform move
+                    board[to.0][to.1] = board[from.0][from.1];
+                    board[from.0][from.1] = Piece::Empty;
+                    // Switch turns
+                    is_blacks_turn = false;
+                } else {
+                    println!("It's black's turn.");
+                }
+            }
+        } else {
+            // Check if there's a piece at the selected position
+            if let Piece::Empty = board[from.0][from.1] {
+                println!("No piece at the specified position.");
+            } else {
+                // Check if it's the player's piece
+                if is_players_piece(board[from.0][from.1], Color::Black) {
+                    // Perform move
+                    board[to.0][to.1] = board[from.0][from.1];
+                    board[from.0][from.1] = Piece::Empty;
+                    // Switch turns
+                    is_blacks_turn = true;
+                } else {
+                    println!("It's white's turn.");
+                }
+            }
+        }
+    }
 }
 
 // Function to initialize the chessboard with pieces
@@ -111,5 +164,44 @@ fn print_board(board: &[[Piece; SIZE]; SIZE]) {
 
         // Print horizontal grid line or bottom border
         println!("  +---+---+---+---+---+---+---+---+");
+    }
+}
+
+// Function to parse the user's move input
+fn parse_input(input: &str) -> ((usize, usize), (usize, usize)) {
+    // Split input by "to" and trim whitespace
+    let positions: Vec<&str> = input.split("to").map(|s| s.trim()).collect();
+
+    // Extract source and destination positions
+    let from = parse_position(positions[0]);
+    let to = parse_position(positions[1]);
+
+    (from, to)
+}
+
+// Function to parse a position string into row and column indices
+fn parse_position(pos: &str) -> (usize, usize) {
+    let chars: Vec<char> = pos.chars().collect();
+    let col = (chars[0] as usize - 'A' as usize) % SIZE;
+    let row = SIZE - chars[1..].iter().collect::<String>().parse::<usize>().unwrap();
+    (row, col)
+}
+
+// Function to check if a piece belongs to the current player
+fn is_players_piece(piece: Piece, color: Color) -> bool {
+    match (piece, color) {
+        (Piece::King(Color::White), Color::White)
+        | (Piece::Queen(Color::White), Color::White)
+        | (Piece::Rook(Color::White), Color::White)
+        | (Piece::Bishop(Color::White), Color::White)
+        | (Piece::Knight(Color::White), Color::White)
+        | (Piece::Pawn(Color::White), Color::White) => true,
+        (Piece::King(Color::Black), Color::Black)
+        | (Piece::Queen(Color::Black), Color::Black)
+        | (Piece::Rook(Color::Black), Color::Black)
+        | (Piece::Bishop(Color::Black), Color::Black)
+        | (Piece::Knight(Color::Black), Color::Black)
+        | (Piece::Pawn(Color::Black), Color::Black) => true,
+        _ => false,
     }
 }
